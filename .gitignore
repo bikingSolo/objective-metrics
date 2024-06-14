@@ -43,3 +43,5 @@ __pycache__
 *.install_package.sh
 *.push_package.sh
 *dist
+*README_pypi.md
+*libnvcuvid.so

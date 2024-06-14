@@ -33,6 +33,7 @@ Most implementations are based on [IQA-PyTorch](https://github.com/chaofengc/IQA
 * [Technical details](#technical-details)
 	* [About VMAF](#about-vmaf)
 * [Calculation pipeline](#calculation-pipeline)
+* [License](#license)
 * [Acknowledgement](#acknowledgement)
 
 # Dependencies
@@ -50,6 +51,11 @@ Most implementations are based on [IQA-PyTorch](https://github.com/chaofengc/IQA
 ```
 $ pip install objective-metrics
 ```
+
+Supported platforms:
+
+- [x] Linux
+- [x] Mac OS
 
 ## Docker
 
@@ -86,12 +92,12 @@ Also, for each dataset you should have a ```{config_filename}_list.json``` file 
 
 Both files also should be placed in ```./datasets_configs``` directory and **exactly** match one config file (yaml) and tool positional argument.
 
-><u>Note:</u> name of dataset in tool positional argument (and in the names of files with configs) may differ from **dataset_name** field in config (which only affects on the name of files with results and logs).
+><ins>Note:</ins> name of dataset in tool positional argument (and in the names of files with configs) may differ from **dataset_name** field in config (which only affects on the name of files with results and logs).
 
-<u>NR Worklist:</u> ```{config_filename}_list.json``` is simply a list of images/videos to compute.
+<ins>NR Worklist:</ins> ```{config_filename}_list.json``` is simply a list of images/videos to compute.
 
 
-<u>FR Worklist:</u> ```{config_filename}_pairs.json``` is a dictionary with reference-distorted pairs.
+<ins>FR Worklist:</ins> ```{config_filename}_pairs.json``` is a dictionary with reference-distorted pairs.
 
 You can see examples of configfs in **dataset_configs** folder.
 
@@ -132,7 +138,7 @@ This command will run pipeline on two datasets: **live-wcvqd** and **tid2013**.
 
 ## Image Dataset
 
-<u>Example tid2013.yaml:</u>
+<ins>Example tid2013.yaml:</ins>
 
 ```
 type: img
@@ -157,9 +163,9 @@ feature_extractors:
 
 ## Video Dataset
 
-><u>Note:</u> Image models are computed frame-wise with further averaging.
+><ins>Note:</ins> Image models are computed frame-wise with further averaging.
 
-<u>Example live-wcvqd.yaml:</u>
+<ins>Example live-wcvqd.yaml:</ins>
 
 ```
 type: vid
@@ -194,17 +200,19 @@ image_feature_extractors:
 
 ### NR Worklist
 
-<u>Name:</u> {config_filename}_list.json (ex. tid2013_list.json)
+<ins>Name:</ins> {config_filename}_list.json (ex. tid2013_list.json)
 
 It is mandatory if you want to use **NR metrics** and **feature extractors**. File should be in **json** format with the following structure:
 
-```['img_pth_1', ...,'img_pth_n']```
+```
+['img_pth_1', ...,'img_pth_n']
+```
 
 All paths should be relative to dataset_pth specified in yaml config.
 
 ### FR Worklist
 
-<u>Name:</u> {config_filename}_pairs.json (ex. tid2013_pairs.json)
+<ins>Name:</ins> {config_filename}_pairs.json (ex. tid2013_pairs.json)
 
 It is mandatory if you want to use **FR metrics**. File should be in .json format with the following structure:
 
@@ -221,17 +229,19 @@ All paths should be relative to dataset_pth specified in yaml config.
 
 ### NR Worklist
 
-<u>Name:</u> {config_filename}_list.json (ex. live-wcvqd_list.json)
+<ins>Name:</ins> {config_filename}_list.json (ex. live-wcvqd_list.json)
 
 It is mandatory if you want to use **NR metrics** and **feature extractors**. File should be in .json format with the following structure:
 
-```['video_pth_1', ...,'video_pth_n']```
+```
+['video_pth_1', ...,'video_pth_n']
+```
 
 All paths should be relative to dataset_pth specified in yaml config.
 
 ### FR Worklist
 
-<u>Name:</u> {config_filename}_pairs.json (ex. live-wcvqd_pairs.json)
+<ins>Name:</ins> {config_filename}_pairs.json (ex. live-wcvqd_pairs.json)
 
 It is mandatory if you want to use **FR metrics**. File should be in .json format with the following structure:
 
@@ -265,7 +275,7 @@ All paths should be relative to dataset_pth specified in yaml config.
 Algortihm will iterate along videos from one tuple simultaneously untill the shortest of them will end.
 
 ***
-<u>Example:</u>
+<ins>Example:</ins>
 
 	{
 		ref: 
@@ -287,7 +297,7 @@ If one of the source or distorted videos is shorter, then warning will be thrown
 
 If number of frames in the reference video is greater then in distorted videos from one record (may be beacuse of frame dropping distortion), then you can provide **mode** for handling this situation. All videos from one record will be treated identically.
 
-<u>mode:</u>
+<ins>mode:</ins>
 
 * `same` -  iterate untill the shortest will end
 
@@ -298,7 +308,7 @@ If number of frames in the reference video is greater then in distorted videos f
 If source video is shorter, then use mode == "same" to simply drop excess frames of distorted videos.
 That's may be suitable, for example, when distorted videos have stalls.
 
-<u>Recommendation</u>: this config has been designed in such a way that it is convenient to group the videos with same length in one tuple and apply one processing method to them. It also speeds up the calculation process.
+<ins>Recommendation</ins>: this config has been designed in such a way that it is convenient to group the videos with same length in one tuple and apply one processing method to them. It also speeds up the calculation process.
 
 # List of available models
 
@@ -504,6 +514,10 @@ After you defined all failed images/videos and metrics - you can make new workli
 
 For example, if due to CUDA out of memory error for some metric more then 10 frames of video failed to be calculated, then this is an excuse to make another attmept for this video for this metric.
 
+# License
+
+This project is licensed under the MIT License. However, it also includes code distributed under the BSD+Patent license. See LICENSE file.
+
 # Acknowledgement
 
 [VQMT](https://compression.ru/video/quality_measure/vqmt_download.html) - Tool with objective metrics
@@ -511,6 +525,8 @@ For example, if due to CUDA out of memory error for some metric more then 10 fra
 [PyIQA](https://github.com/chaofengc/IQA-PyTorch/tree/main) - Python Library
 
 [PIQ](https://github.com/photosynthesis-team/piq?tab=readme-ov-file) - Python Library
+
+[VMAF](https://github.com/Netflix/vmaf)
 
 [Table of Metrics](https://github.com/chaofengc/Awesome-Image-Quality-Assessment)
 

@@ -1,9 +1,9 @@
 [tool.poetry]
 name = "objective-metrics"
-version = "1.2.1"
+version = "1.2.2"
 description = "Command line tool for Image and Video Quality Assessment including MDTVSFA, FAST-VQA, VMAF, MUSIQ and more..."
 authors = ["Lev Borisvoskiy <levbor888@gmail.com>"]
-readme = "README.md"
+readme = "README_pypi.md"
 license = "MIT"
 homepage = "https://github.com/bikingSolo/objective-metrics"
 repository = "https://github.com/bikingSolo/objective-metrics"

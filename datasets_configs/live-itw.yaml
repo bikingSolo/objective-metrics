@@ -1,0 +1,9 @@
+type: img
+dataset_pth: /home/26l_bor@lab.graphicon.ru/mnt/storage/datasets/subjective/image/LIVE_itW
+dataset_name: LIVE-itW
+output: metrics_values/LIVE-itW
+logs_output: live-itw.log
+fr_metrics: ~
+nr_metrics: ~
+feature_extractors:
+  - inception_v3

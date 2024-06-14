@@ -1,0 +1,45 @@
+# Video
+*.mp4
+
+# Archives
+*.zip
+*.tgz
+*.pkl
+*.npz
+
+# Models
+*.ckpt
+*.pth
+*.pt
+*.h5
+
+# Logs
+__pyache__
+__pycache__
+
+# Cache
+*.DS_Store
+*.ipynb_checkpoints
+*.virtual_documents
+
+# Virtual Env
+*.venv
+
+# VSCode
+.vscode/
+
+# mypy
+.dmypy.json
+.mypy_cache/
+
+# notebooks
+*.ipynb
+
+# dev
+*.pypirc
+*poetry.lock
+*poetry.toml
+*.python-version
+*.install_package.sh
+*.push_package.sh
+*dist

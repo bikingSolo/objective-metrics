@@ -1,0 +1,28 @@
+type: vid
+dataset_pth: /home/26l_bor@lab.graphicon.ru/mnt/storage/datasets/subjective/video/KoSMo_1k
+dataset_name: KoSMo-1k
+output: metrics_values/KoSMo-1k
+logs_output: kosmo-1k.log
+fr_iqa_metrics:
+  - psnr
+  - ssim
+  - fsim
+  - ms_ssim
+  - vif
+  - vsi
+  - lpips
+  - ahiq
+  - pieapp
+  - dists
+  - gmsd
+  - topiq_fr
+  - srsim
+  - dss
+  - haarpsi
+  - mdsi
+  - msgmsd
+nr_iqa_metrics: ~
+fr_vqa_metrics: ~
+nr_vqa_metrics: ~
+image_feature_extractors:
+  - inception_v3

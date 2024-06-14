@@ -1,0 +1,9 @@
+type: img
+dataset_pth: /home/26l_bor@lab.graphicon.ru/mnt/storage/datasets/subjective/image/KonIQ_10k
+dataset_name: KonIQ-10k
+output: metrics_values/KonIQ-10k
+logs_output: koniq-10k.log
+fr_metrics: ~
+nr_metrics: ~
+feature_extractors:
+  - inception_v3

@@ -1,0 +1,11 @@
+type: vid
+dataset_pth: /home/26l_bor@lab.graphicon.ru/mnt/storage/datasets/subjective/video/LIVE_VQC
+dataset_name: LIVE-VQC
+output: metrics_values/LIVE-VQC
+logs_output: live-vqc.log
+fr_iqa_metrics: ~
+nr_iqa_metrics: ~
+fr_vqa_metrics: ~
+nr_vqa_metrics: ~
+image_feature_extractors:
+  - inception_v3

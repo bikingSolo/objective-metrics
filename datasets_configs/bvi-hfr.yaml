@@ -1,0 +1,31 @@
+type: vid
+dataset_pth: /home/26l_bor@lab.graphicon.ru/mnt/storage/datasets/subjective/video/BVI-HFR
+dataset_name: BVI-HFR
+output: metrics_values/BVI-HFR
+logs_output: bvi-hfr.log
+fr_iqa_metrics:
+  - psnr
+  - ssim
+  - fsim
+  - ms_ssim
+  - vif
+  - vsi
+  - lpips
+  - ahiq
+  - pieapp
+  - dists
+  - gmsd
+  - topiq_fr
+  - srsim
+  - dss
+  - haarpsi
+  - mdsi
+  - msgmsd
+nr_iqa_metrics: ~
+fr_vqa_metrics: ~
+nr_vqa_metrics:
+  - mdtvsfa
+  - dover
+  - FAST-VQA
+image_feature_extractors:
+  - inception_v3

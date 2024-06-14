@@ -1,0 +1,9 @@
+type: vid
+dataset_pth: /home/26l_bor@lab.graphicon.ru/mnt/storage/datasets/subjective/video/KonViD_1k
+dataset_name: KonViD-1k
+output: metrics_values/KonViD-1k
+logs_output: konvid-1k.log
+nr_iqa_metrics: ~
+nr_vqa_metrics: ~
+image_feature_extractors:
+  - inception_v3

@@ -1,0 +1,31 @@
+type: vid
+dataset_pth: /home/26l_bor@lab.graphicon.ru/mnt/storage/datasets/subjective/video/KUGVD
+dataset_name: KUGVD
+output: metrics_values/KUGVD
+logs_output: kugvd.log
+fr_iqa_metrics:
+  - psnr
+  - ssim
+  - fsim
+  - ms_ssim
+  - vif
+  - vsi
+  - lpips
+  - ahiq
+  - pieapp
+  - dists
+  - gmsd
+  - topiq_fr
+  - srsim
+  - dss
+  - haarpsi
+  - mdsi
+  - msgmsd
+nr_vqa_metrics:
+  - mdtvsfa
+  - FAST-VQA
+  - dover
+fr_vqa_metrics: ~
+nr_iqa_metrics: ~
+image_feature_extractors:
+  - inception_v3

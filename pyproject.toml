@@ -1,0 +1,27 @@
+[tool.poetry]
+name = "objective-metrics"
+version = "1.2.1"
+description = "Command line tool for Image and Video Quality Assessment including MDTVSFA, FAST-VQA, VMAF, MUSIQ and more..."
+authors = ["Lev Borisvoskiy <levbor888@gmail.com>"]
+readme = "README.md"
+license = "MIT"
+homepage = "https://github.com/bikingSolo/objective-metrics"
+repository = "https://github.com/bikingSolo/objective-metrics"
+keywords = ["quality assessment", "image quality assessment", "video quality assessment", "pytorch"]
+
+[tool.poetry.dependencies]
+python = ">=3.10 <3.11"
+pyiqa = "^0.1.8"
+piq = "^0.8.0"
+scikit-video = "^1.1.11"
+h5py = "^3.10.0"
+ffmpeg-python = "^0.2.0"
+gdown = "^5.0.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+objective_metrics_run = 'objective_metrics.objective_metrics_run:run'

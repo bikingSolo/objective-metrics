@@ -1,0 +1,14 @@
+type: img
+dataset_pth: /home/26l_bor@lab.graphicon.ru/mnt/storage/datasets/subjective/image/Pipal
+dataset_name: Pipal
+output: metrics_values/Pipal
+logs_output: pipal.log
+fr_metrics:
+  - srsim
+  - dss
+  - haarpsi
+  - mdsi
+  - msgmsd
+nr_metrics: ~
+feature_extractors:
+  - inception_v3
